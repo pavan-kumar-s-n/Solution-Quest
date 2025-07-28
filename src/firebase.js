@@ -4,13 +4,13 @@ import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAjTkYyRECUcMA2WWcs8cyeX3KxDAALK4s",
-  authDomain: "forum-app-e251c.firebaseapp.com",
-  projectId: "forum-app-e251c",
-  storageBucket: "forum-app-e251c.appspot.com",
-  messagingSenderId: "142645871396",
-  appId: "1:142645871396:web:732efde330d3c07fffe9b1",
-  measurementId: "G-E6Y60EXP83"
+  apiKey: "",
+  authDomain: "",
+  projectId: "",
+  storageBucket: "",
+  messagingSenderId: "",
+  appId: "",
+  measurementId: ""
 };
 
 const app = initializeApp(firebaseConfig);
