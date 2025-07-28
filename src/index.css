@@ -1,0 +1,719 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  margin-top: 0px;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+   /* Backgrounds */
+   --bg-primary: #ffffff;
+   --bg-secondary: #f8f9fa;
+   --bg-tertiary: #e9ecef;
+   
+   /* Text */
+   --text-primary: #212529;
+   --text-secondary: #495057;
+   
+   /* Accents */
+   --accent-primary: #4361ee;
+   --accent-secondary: #3a86ff;
+   
+   /* Buttons */
+   --btn-primary: #2980b9;
+   --btn-danger: #e74c3c;
+   --btn-success: #27ae60;
+   
+   /* Borders */
+   --border-color: #dee2e6;
+   
+   /* Shadows */
+   --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
+   --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+   --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
+
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+
+/* Global Dark Theme */
+.dark {
+  /* Backgrounds */
+  --bg-primary: #121212;
+  --bg-secondary: #1e1e1e;
+  --bg-tertiary: #2a2a2a;
+  
+  /* Text */
+  --text-primary: #f8f9fa;
+  --text-secondary: #adb5bd;
+  
+  /* Accents */
+  --accent-primary: #3a86ff;
+  --accent-secondary: #4cc9f0;
+  
+  /* Buttons */
+  --btn-primary: #1e88e5;
+  --btn-danger: #f44336;
+  --btn-success: #4caf50;
+  
+  /* Borders */
+  --border-color: #424242;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.5);
+  --shadow-md: 0 4px 6px rgba(0,0,0,0.3);
+  --shadow-lg: 0 10px 15px rgba(0,0,0,0.2);
+}
+
+.btn {
+  background-color: var(--btn-primary);
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.btn-danger {
+  background-color: var(--btn-danger);
+}
+
+.btn-success {
+  background-color: var(--btn-success);
+}
+
+/* Card Styles */
+.card {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+}
+
+/* Input Styles */
+input, textarea {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+html.dark {
+  background-color: #121212;
+  color: #f0f0f0;
+}
+
+html.dark body {
+  background-color: #121212;
+  color: #f0f0f0;
+}
+
+html.dark button {
+  background-color: #333;
+  color: white;
+  border-color: #555;
+}
+
+html.dark a {
+  color: #8ab4f8;
+}
+
+html.dark a:hover {
+  color: #a0c2ff;
+}
+
+
+/* Reset & Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  background-color: #f1f5f9; /* Light grey background for a soft look */
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 0px;
+  line-height: 1.6;
+  padding: 0px;
+}
+
+
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 780px; /* Increased max-width for better readability */
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Softer shadow */
+  margin-left: 250px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Headings */
+h1, h2, h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #2c3e50; /* Deep blue-gray for a clean and professional look */
+}
+
+.heading {
+  color: #3498db; /* Vivid blue for accent and emphasis */
+  font-weight: 600;
+}
+
+.welcome {
+  font-size: 20px;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Buttons */
+button,
+.logout-btn,
+.post-btn,
+.auth-btn {
+  background-color: #2980b9; /* Blue for primary action buttons */
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+button:hover,
+.logout-btn:hover,
+.post-btn:hover,
+.auth-btn:hover {
+  background-color: #1f618d; /* Darker blue on hover for better interaction */
+  transform: translateY(-1px);
+}
+
+.logout-btn {
+  background-color: #e74c3c; /* Red for logout to signify importance */
+  margin-bottom: 25px;
+}
+
+.logout-btn:hover {
+  background-color: #c0392b;
+}
+
+/* Form Layout */
+.form-container {
+  margin-top: 30px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.input,
+textarea,
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 16px;
+  border: 1px solid #ccc; /* Lighter gray border */
+  border-radius: 8px;
+  background-color: #f8f9fa; /* Soft background for inputs */
+  transition: border 0.2s ease;
+  color: #555;
+}
+
+.input:focus,
+textarea:focus,
+input:focus {
+  border-color: #2980b9; /* Focus border in primary blue */
+  outline: none;
+  background-color: #fff;
+}
+
+.question-tags {
+  margin-top: 10px;
+}
+
+.question-tags span {
+  display: inline-block;
+  background-color: #d5f5e3; /* Light greenish background for tags */
+  color: #27ae60; /* Dark green text for tags */
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 13px;
+  margin-right: 8px;
+}
+
+.tag-filter {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.tag-button {
+  margin: 5px 8px 5px 0;
+  padding: 5px 10px;
+  background-color: #ecf0f1; /* Light gray background for buttons */
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.tag-button:hover {
+  background-color: #dcdcdc; /* Slightly darker gray for hover effect */
+}
+
+.tag-button.selected {
+  background-color: #3498db; /* Blue for selected tags */
+  color: white;
+}
+
+.clear-tag-btn,
+.tag-span {
+  margin: 5px 8px 5px 0;
+  padding: 5px 10px;
+  background-color: #ecf0f1;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 0.9rem;
+}
+
+.clear-tag-btn:hover,
+.tag-span:hover {
+  background-color: #dcdcdc;
+}
+
+.tag-span {
+  background-color: #d5f5e3;
+  margin-right: 5px;
+}
+
+.post-btn {
+  align-self: flex-end;
+  background-color: #27ae60; /* Green for post button */
+}
+
+.post-btn:hover {
+  background-color: #2ecc71; /* Slightly darker green on hover */
+}
+
+/* Auth Buttons */
+.auth-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 25px;
+}
+
+/* Questions */
+.question-list {
+  margin-top: 35px;
+}
+
+.question-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 20px 24px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease;
+}
+
+.question-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Section Heading */
+.section-heading {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.deleteBtn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background-color: #e74c3c; /* Red for delete button */
+  color: white;
+}
+
+.deleteBtn:hover {
+  background-color: #c0392b;
+  transform: translateY(-1px);
+}
+
+.deleteBtn:active {
+  transform: translateY(0);
+  background-color: #aa0000;
+}
+
+.deleteBtn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.4);
+}
+
+.deleteBtn:disabled {
+  background-color: #f2d7d5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.icon {
+  margin-right: 6px;
+}
+
+/* No Answers Message */
+.no-answers {
+  font-style: italic;
+  color: #777;
+  padding: 10px;
+}
+
+/* Answer List Styles */
+.answer-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Individual Answer Card */
+.answer-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 14px 18px;
+  border-radius: 8px;
+  background-color: #f9fafb;
+  border-left: 4px solid #27ae60; /* Green for accepted answer border */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.answer-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.answer-vote {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.answer-vote button {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: #555;
+  transition: color 0.2s;
+}
+
+.answer-vote button:hover {
+  color: #3498db; /* Blue hover effect */
+}
+
+.answer-vote span {
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.answer-text {
+  font-size: 16px;
+  color: #444;
+  line-height: 1.5;
+}
+
+.answer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Accepted Answer Badge */
+.accepted-badge {
+  display: inline-block;
+  margin-left: 10px;
+  background-color: #27ae60; /* Green for accepted answer badge */
+  color: white;
+  padding: 4px 8px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Mark as Accepted Button */
+.mark-btn {
+  background-color: #27ae60; /* Green for mark as accepted */
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.mark-btn:hover {
+  background-color: #2ecc71;
+  transform: translateY(-1px);
+}
+
+.mark-btn:active {
+  transform: translateY(0);
+}
+
+/* Styling for Hover/Focus States */
+.answer-card:focus-within {
+  border-color: #2980b9; /* Focus effect in blue */
+}
+
+/* Style for Larger Viewports */
+@media screen and (min-width: 1024px) {
+  .container {
+      max-width: 960px; /* Wider container for larger screens */
+  }
+}
+
+.answer-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.answer-actions button {
+  background-color: #ecf0f1;
+  color: #333;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.answer-actions button:hover {
+  background-color: #dcdcdc;
+}
+
+.accepted-answer {
+  border-color: #27ae60;
+  background-color: #e8f5e9; /* Light green background for accepted answer */
+}
+
+.answer-card-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.vote-controls {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.vote-controls button {
+  background-color: #e3f2fd;
+  color: #2980b9; /* Light blue for vote buttons */
+  border: none;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.vote-controls button:hover {
+  background-color: #bbdefb;
+}
+
+.vote-count {
+  margin-top: 4px;
+  font-weight: bold;
+  color: #333;
+}
+
+.answer-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.action-buttons button {
+  background-color: #ecf0f1;
+  color: #333;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.action-buttons button:hover {
+  background-color: #dcdcdc;
+}
+
+.like-btn, .dislike-btn {
+  background-color: #ecf0f1;
+  border: none;
+  border-radius: 50%;
+  padding: 6px 10px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.like-btn:hover {
+  background-color: #a5d6a7; /* Light green for like button */
+}
+
+.dislike-btn:hover {
+  background-color: #f8bbd0; /* Light pink for dislike button */
+}
+
+.vote-count {
+  font-weight: bold;
+  font-size: 16px;
+  min-width: 20px;
+  text-align: center;
+}
+
+.comments-section input {
+  padding: 6px;
+  margin-right: 6px;
+  margin-top: 6px;
+}
+
+
+.layout {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.main-content {
+  margin-left: 0px; /* Should match sidebar width */
+  flex: 1;
+  min-height: 100vh;
+  width: calc(100% - 250px); /* 100% minus sidebar width */
+}
