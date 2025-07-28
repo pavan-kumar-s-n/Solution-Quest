@@ -45,7 +45,7 @@
 
 ---
 
-How you run the project (npm run dev)
+How you run the project (npm run dev)<br>
 How to install packages (npm install)
 
 ---
