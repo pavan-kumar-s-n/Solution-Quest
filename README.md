@@ -43,6 +43,12 @@
     }
     }
 
+---
+
+How you run the project (npm run dev)
+How to install packages (npm install)
+
+---
 
 ## Folder Structure
 
